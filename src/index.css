@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Focus Studio: quiet decoration for its two sci-fi themes. */
+.focus-app { transition: background 500ms ease, color 350ms ease; }
+.theme-hero { background-attachment: fixed; }
+.theme-hero .timer-card { box-shadow: 0 18px 55px rgba(56, 164, 209, .14), 0 4px 22px rgba(237, 84, 104, .06); }
+.theme-hero .timer-dial::before {
+  content: ""; position: absolute; inset: 10%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(108,217,250,.18), transparent 69%);
+  box-shadow: inset 0 0 0 1px rgba(65,191,232,.13); pointer-events: none;
+}
+.theme-survival { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+.theme-survival .timer-card { box-shadow: 0 0 0 1px rgba(128,224,156,.06), 0 18px 60px rgba(0,0,0,.28); }
+.theme-survival .timer-readout { text-shadow: 0 0 20px rgba(137,220,157,.18); }
+.theme-survival .timer-readout > div:nth-child(2) { letter-spacing: .015em; }
+.theme-survival .timer-dial::before {
+  content: ""; position: absolute; inset: 4%; border: 1px dashed rgba(129,218,155,.16); border-radius: 50%; pointer-events: none;
+}
+.theme-scene { min-height: 185px; }
+.scene-hero { background: linear-gradient(115deg, #f5feff 0%, #d4f3fd 58%, #ffe0e7 100%); border-color: #a7e1ef; color: #203d57; box-shadow: 0 14px 38px rgba(68,158,197,.13); }
+.scene-hero .scene-eyebrow { color: #1477a1; }
+.scene-hero .scene-status { color: #116c86; background: rgba(255,255,255,.77); border: 1px solid rgba(71,187,217,.35); }
+.scene-hero .status-light { width: 7px; height: 7px; border-radius: 50%; background: #28b58e; box-shadow: 0 0 0 3px rgba(40,181,142,.12); }
+.scene-survival { background: radial-gradient(circle at 80% 50%, #1b3e2c 0%, #112419 38%, #07110d 100%); border-color: #467259; color: #c4e9cd; box-shadow: inset 0 0 40px rgba(0,0,0,.2), 0 16px 38px rgba(0,0,0,.2); }
+.scene-survival .scene-eyebrow { color: #efab80; }
+.scene-survival .scene-status { color: #a9deb7; background: #1c3928; border: 1px solid rgba(113,187,135,.5); }
+.scene-survival .status-light { width: 7px; height: 7px; border-radius: 50%; background: #a7f7b4; box-shadow: 0 0 10px rgba(167,247,180,.75); }
+.scene-art { position: absolute; width: 44%; max-width: 425px; right: 0; top: 0; height: 100%; pointer-events: none; }
+.scene-art-hero { right: 0; }
+.scene-art-survival { width: 36%; right: 4%; opacity: .9; }
+.scene-corner { position: absolute; width: 28px; height: 28px; border-color: #ce9a63; pointer-events: none; }
+.scene-corner-tl { top: 9px; left: 9px; border-top: 2px solid; border-left: 2px solid; }
+.scene-corner-br { right: 9px; bottom: 9px; border-right: 2px solid; border-bottom: 2px solid; }
+.scanlines { position: absolute; inset: 0; pointer-events: none; opacity: .09; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, #000 4px, #000 5px); }
+.radar-beam { transform-origin: 168px 90px; animation: radar-sweep 9s linear infinite; }
+@keyframes radar-sweep { to { transform: rotate(360deg); } }
+@media (max-width: 600px) { .scene-art { width: 50%; opacity: .55; } .scene-art-survival { right: -6%; width: 51%; } .theme-scene { min-height: 200px; } }
+@media (prefers-reduced-motion: reduce) { .radar-beam { animation: none; } .focus-app { transition: none; } }
